@@ -14,7 +14,7 @@ public class PessoaService {
 
     public PessoaService() {
         // Inicializa o EntityManagerFactory e EntityManager
-        emf = Persistence.createEntityManagerFactory("pessoaPU");
+        emf = Persistence.createEntityManagerFactory("DesignPU");
         em = emf.createEntityManager();
     }
 

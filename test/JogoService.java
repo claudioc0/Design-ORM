@@ -17,7 +17,7 @@ public class JogoService {
 
     public JogoService() {
         // Inicializa o EntityManagerFactory e EntityManager
-        emf = Persistence.createEntityManagerFactory("jogoPU");
+        emf = Persistence.createEntityManagerFactory("DesignPU");
         em = emf.createEntityManager();
     }
 
