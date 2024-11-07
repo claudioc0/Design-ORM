@@ -5,30 +5,24 @@
                         http://java.sun.com/xml/ns/persistence/persistence_2_1.xsd"
              version="2.0">
 
-    <persistence-unit name="DesignPU">
+    <persistence-unit name="DesignPU" transaction-type="RESOURCE_LOCAL">
         <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
 
-        <!-- Defina as classes de entidade -->
         <class>model.Jogo</class>
         <class>model.Pessoa</class>
         <class>model.JogoConsole</class>
         <class>model.JogoPC</class>
 
-        <!-- Defina as propriedades JDBC -->
         <properties>
-            <property name="jakarta.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/design"/>
+            <property name="jakarta.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
+            <property name="jakarta.persistence.jdbc.url" value="jdbc:mysql://localhost/design"/>
             <property name="jakarta.persistence.jdbc.user" value="root"/>
             <property name="jakarta.persistence.jdbc.password" value="PUC@1234"/>
-            <property name="jakarta.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
-
-            <!-- Propriedades adicionais do EclipseLink -->
             <property name="eclipselink.logging.level" value="FINE"/>
-            <property name="eclipselink.jdbc.batch-writing" value="JDBC"/>
-
-            <!-- Gerar o esquema automaticamente -->
-            <property name="eclipselink.ddl-generation" value="create-tables"/> <!-- Use "drop-and-create-tables" para apagar e recriar -->
-            <property name="eclipselink.ddl-generation.output-mode" value="both"/> <!-- Gera o SQL para auditoria -->
+            <property name="eclipselink.ddl-generation" value="create-tables"/>
+            <property name="eclipselink.ddl-generation.output-mode" value="database"/>
         </properties>
+
     </persistence-unit>
 
 </persistence>
